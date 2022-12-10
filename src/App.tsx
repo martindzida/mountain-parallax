@@ -1,5 +1,6 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import NavLink from './NavLink'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import a from './assets/1.jpg'
 import b from './assets/2.jpg'
 import c from './assets/3.jpg'
@@ -11,10 +12,7 @@ import g from './assets/7.jpg'
 function App() {
   return (
     <div className='w-full h-full flex justify-center font-martian'>
-      <div className='w-full fixed flex justify-end gap-10 font-extralight uppercase text-white z-10 px-12 py-8'>
-        <NavLink href='/'>Home</NavLink>
-        <NavLink href='/'>About</NavLink>
-      </div>
+      <Navbar />
       <Parallax pages={2}>
         <ParallaxLayer
           speed={0.05}
@@ -23,8 +21,9 @@ function App() {
             backgroundSize: 'cover',
             backgroundImage: `url(${a})`,
           }}
-        ></ParallaxLayer>
-        <ParallaxLayer speed={0.5} factor={1.5} style={{ backgroundSize: 'cover', backgroundImage: `url(${g})` }}></ParallaxLayer>
+        >
+          <Footer />
+        </ParallaxLayer>
       </Parallax>
     </div>
   )
